@@ -1,3 +1,4 @@
+[![Turnitin](http://go.turnitin.com/l/45292/2015-07-07/37ty9m/45292/77056/turnitin_logo_primary_rgb.png)](http://turnitin.com/)
 [![iThenticate](http://www.ithenticate.com/Portals/92785/images/iThenticate_Logo.png)](http://www.ithenticate.com/)
 
 # iThenticate API client Python
