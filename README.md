@@ -1,5 +1,5 @@
-[![iThenticate](http://www.ithenticate.com/Portals/92785/images/iThenticate_Logo.png =75x)](http://www.ithenticate.com/)
-[![Turnitin](http://go.turnitin.com/l/45292/2015-07-07/37ty9m/45292/77056/turnitin_logo_primary_rgb.png =100x)](http://turnitin.com/)
+[<img src="http://www.ithenticate.com/Portals/92785/images/iThenticate_Logo.png" height="75">](http://www.ithenticate.com/)
+[<img src="http://go.turnitin.com/l/45292/2015-07-07/37ty9m/45292/77056/turnitin_logo_primary_rgb.png" height="100">](http://turnitin.com/)
 
 # iThenticate API client Python
 
