@@ -1,1 +1,1 @@
-# turnitin-api-python
+# iThenticate API Python
