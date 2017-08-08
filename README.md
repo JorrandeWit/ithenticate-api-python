@@ -3,7 +3,7 @@
 
 # iThenticate API client Python
 
-This package provides an [iThenticate API](https://guides.turnitin.com/iThenticate/iThenticate_API_Guide) Client for Python. You may also use this client for a [Turnitin](http://turnitin.com/) account, which uses the iThenticate API.
+This package provides an [iThenticate](http://www.ithenticate.com/) API Client for Python. You may also use this client for a [Turnitin](http://turnitin.com/) account, which uses the iThenticate API.
 
 [![PyPI version](https://badge.fury.io/py/ithenticate-api-python.svg)](https://badge.fury.io/py/ithenticate-api-python)
 
