@@ -1,0 +1,19 @@
+<methodCall>
+    <methodName>login</methodName>
+    <params>
+        <param>
+            <value>
+                <struct>
+                    <member>
+                        <name>password</name>
+                        <value><string>{password}</string></value>
+                    </member>
+                    <member>
+                        <name>username</name>
+                        <value><string>{username}</string></value>
+                    </member>
+                </struct>
+            </value>
+        </param>
+    </params>
+</methodCall>
