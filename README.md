@@ -54,27 +54,29 @@ Use the `folders` property is to list and get folders related to your account.
 }
 ```
 
-#### Get folder ####
-##### `folders.get(folder_id)` #####
+### Documents ###
+
+Use the `documents` property is to all document related methods.
+
+#### Get all documents ####
+##### `documents.all(folder_id)` #####
 
 ```python
 >>>> client.folders.get('1234567')
 {
   "data": [
     {
-      'name': 'My Folder',
-      'group': None,
-      'id': '1234567'
+      'title': 'My Document',
+      'doc_id': '987654',
+      'author_first': 'John',
+      'author_last': 'Doe',
+      'is_pending': '1',
     }
   ],
   "messages": [],
   "status": 200
 }
 ```
-
-### Documents ###
-
-Use the `documents` property is to all document related methods.
 
 #### Submit a document ####
 ##### `documents.add(path, folder_id, author_first_name, author_last_name, document_title)` #####
