@@ -19,15 +19,81 @@ $ pip install ithenticate-api-python
 Requiring the iThenticate API Client.
 
 ```python
-import iThenticate
+>>>> import iThenticate
 ```
 
 Initializing the iThenticate API client, and login.
 
 ```python
-client = iThenticate.API.Client('test_username', 'test_password')
-client.login()
+>>>> client = iThenticate.API.Client('test_username', 'test_password')
+>>>> client.login()
+True
 ```
+
+## Method reference ##
+
+### Folders ###
+
+Use the `folders` property is to list and get folders related to your account.
+
+#### List all folders ####
+##### `folders.all()` #####
+
+```python
+>>>> client.folders.all()
+{
+  "data": [
+    {
+      'name': 'My Folder',
+      'group': None,
+      'id': '1234567'
+    }
+  ],
+  "messages": [],
+  "status": 200
+}
+```
+
+#### Get folder ####
+##### `folders.get(folder_id)` #####
+
+```python
+>>>> client.folders.get('1234567')
+{
+  "data": [
+    {
+      'name': 'My Folder',
+      'group': None,
+      'id': '1234567'
+    }
+  ],
+  "messages": [],
+  "status": 200
+}
+```
+
+### Documents ###
+
+Use the `documents` property is to all document related methods.
+
+#### Submit a document ####
+##### `documents.add(path, folder_id, author_first_name, author_last_name, document_title)` #####
+```python
+>>>> client.documents.add('/absolute/path/to/document.pdf', '123456', 'John', 'Doe', 'Document Title')
+{
+  "data": [
+    {
+      'filename': 'document.pdf',
+      'id': '123456'
+    }
+  ],
+  "messages": [
+    'Uploaded 1 document successfully'
+  ],
+  "status": 200
+}
+```
+
 
 ## License ##
 [BSD (Berkeley Software Distribution) License](https://opensource.org/licenses/bsd-license.php).
