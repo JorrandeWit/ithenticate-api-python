@@ -1,7 +1,7 @@
 [<img src="http://www.ithenticate.com/Portals/92785/images/iThenticate_Logo.png" height="75">](http://www.ithenticate.com/)
 [<img src="http://go.turnitin.com/l/45292/2015-07-07/37ty9m/45292/77056/turnitin_logo_primary_rgb.png" height="100">](http://turnitin.com/)
 
-# iThenticate API client Python
+# iThenticate API Client Python
 
 This package provides an [iThenticate](http://www.ithenticate.com/) API Client for Python. You may also use this client for a [Turnitin](http://turnitin.com/) account, which uses the iThenticate API.
 
@@ -10,7 +10,7 @@ This package provides an [iThenticate](http://www.ithenticate.com/) API Client f
 ## Installation ##
 
 The easiest way to install is with [pip](https://pip.pypa.io).
-```
+```shell
 $ pip install ithenticate-api-python
 ```
 
@@ -22,7 +22,7 @@ Requiring the iThenticate API Client.
 >>>> import iThenticate
 ```
 
-Initializing the iThenticate API client, and login.
+Initializing the iThenticate API client and login.
 
 ```python
 >>>> client = iThenticate.API.Client('test_username', 'test_password')
