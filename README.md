@@ -1,9 +1,9 @@
-[![Turnitin](http://go.turnitin.com/l/45292/2015-07-07/37ty9m/45292/77056/turnitin_logo_primary_rgb.png)](http://turnitin.com/)
-[![iThenticate](http://www.ithenticate.com/Portals/92785/images/iThenticate_Logo.png)](http://www.ithenticate.com/)
+[<img src="http://www.ithenticate.com/Portals/92785/images/iThenticate_Logo.png" height="75">](http://www.ithenticate.com/)
+[<img src="http://go.turnitin.com/l/45292/2015-07-07/37ty9m/45292/77056/turnitin_logo_primary_rgb.png" height="100">](http://turnitin.com/)
 
 # iThenticate API client Python
 
-This package provides an [iThenticate API](https://guides.turnitin.com/iThenticate/iThenticate_API_Guide) Client for Python. You may also use this client for a [Turnitin](http://turnitin.com/) account, which uses the iThenticate API.
+This package provides an [iThenticate](http://www.ithenticate.com/) API Client for Python. You may also use this client for a [Turnitin](http://turnitin.com/) account, which uses the iThenticate API.
 
 [![PyPI version](https://badge.fury.io/py/ithenticate-api-python.svg)](https://badge.fury.io/py/ithenticate-api-python)
 
