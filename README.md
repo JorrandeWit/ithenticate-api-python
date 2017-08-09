@@ -62,7 +62,7 @@ Use the `documents` property is to all document related methods.
 ##### `documents.all(folder_id)` #####
 
 ```python
->>>> client.folders.get('1234567')
+>>>> client.documents.all('1234567')
 {
   "data": [
     {
