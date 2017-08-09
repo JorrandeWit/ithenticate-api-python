@@ -3,6 +3,7 @@ import sys
 import requests
 import xml.etree.ElementTree as ET
 
+from . import Treasure
 from .Exceptions import ThwartedResponseError
 from .Helpers import get_xml_as_string
 
@@ -15,6 +16,9 @@ class Client(object):
     def __init__(self, username=None, password=None):
         if username and password:
             self.setCredentials(username, password)
+
+        self.folders = Treasure.Folder(self)
+        self.documents = Treasure.Document(self)
 
     def setCredentials(self, username, password):
         self._username = username
@@ -77,9 +81,10 @@ class Client(object):
             raise Exception(e)
 
         # Brief validation of XML returned
+        # print(response.text)
         xml = ET.fromstring(response.text)
-        api_status = self.getAPIStatus(xml)
-        if api_status != 200:
-            raise ThwartedResponseError(api_status)
+        # api_status = self.getAPIStatus(xml)
+        # if api_status != 200:
+        #     raise ThwartedResponseError(api_status)
 
         return xml

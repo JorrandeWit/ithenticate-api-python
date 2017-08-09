@@ -1,0 +1,19 @@
+<methodCall>
+    <methodName>{method_name}</methodName>
+    <params>
+        <param>
+            <value>
+                <struct>
+                    <member>
+                        <name>sid</name>
+                        <value><string>{sid}</string></value>
+                    </member>
+                    <member>
+                        <name>id</name>
+                        <value><int>{id}</int></value>
+                    </member>
+                </struct>
+            </value>
+        </param>
+    </params>
+</methodCall>
