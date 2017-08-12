@@ -80,11 +80,5 @@ class Client(object):
         except Exception as e:
             raise Exception(e)
 
-        # Brief validation of XML returned
-        # print(response.text)
         xml = ET.fromstring(response.text)
-        # api_status = self.getAPIStatus(xml)
-        # if api_status != 200:
-        #     raise ThwartedResponseError(api_status)
-
         return xml
