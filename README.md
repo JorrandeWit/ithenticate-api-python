@@ -118,6 +118,9 @@ Use the `documents` property is to all document related methods.
 }
 ```
 
+## Support ##
+The package is Python 3.x-compatible.
+
 
 ## License ##
 [BSD (Berkeley Software Distribution) License](https://opensource.org/licenses/bsd-license.php).
