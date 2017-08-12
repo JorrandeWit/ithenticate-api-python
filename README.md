@@ -46,7 +46,7 @@ Use the `folders` property is to list and get folders related to your account.
     {
       'name': 'My Folder',
       'group': None,
-      'id': '1234567'
+      'id': 123456'
     }
   ],
   "messages": [],
@@ -67,10 +67,10 @@ Use the `documents` property is to all document related methods.
   "data": [
     {
       'title': 'My Document',
-      'doc_id': '987654',
+      'doc_id': 987654,
       'author_first': 'John',
       'author_last': 'Doe',
-      'is_pending': '1',
+      'is_pending': 1,
     }
   ],
   "messages": [],
@@ -86,12 +86,34 @@ Use the `documents` property is to all document related methods.
   "data": [
     {
       'filename': 'document.pdf',
-      'id': '123456'
+      'id': 123456
     }
   ],
   "messages": [
     'Uploaded 1 document successfully'
   ],
+  "status": 200
+}
+```
+
+#### Get document status ####
+##### `documents.get(path, document_id)` #####
+```python
+>>>> client.documents.get('123456')
+{
+  "data": [
+    {
+        'id': 123456,
+        'title': 'Beautiful Dummy Document',
+        'uploaded_time': '2008-06-05T15:13:11',
+        'author_last': 'Doe',
+        'author_first': 'John',
+        'percent_match': 73,
+        'is_pending': 1,
+        'processed_time': '2008-06-05T15:30:02'
+    }
+  ],
+  "messages": [],
   "status": 200
 }
 ```
