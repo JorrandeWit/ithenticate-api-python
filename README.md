@@ -56,7 +56,7 @@ Use the `folders` property to list all folders related to your account.
 
 ### Documents ###
 
-Use the `documents` property forall document related methods.
+Use the `documents` property for all document related methods.
 
 #### Get all documents ####
 ##### `documents.all(folder_id)` #####
