@@ -4,7 +4,7 @@ class Data(dict):
         Process the freakin' xml instance to a friendly dictionary!
         """
         xml_regex = ".//member[name='{object_name}']/value/array/data/value/struct"
-        struct_nodes = xml.findall(xml_regex.format(object_name='folders'))
+        struct_nodes = xml.findall(xml_regex.format(object_name=object_name))
 
         content = {
             'data': [],
