@@ -46,8 +46,10 @@ class Client(object):
             logger.warning('iThenticate login failed: {0}'.format(e.message))
             return False
 
-        self._session_id = xml.find(".//member[name='sid']/value/string").text
-        return True
+        if self.getAPIStatus(xml) == 200:
+            self._session_id = xml.find(".//member[name='sid']/value/string").text
+            return True
+        return False
 
     def getAPIMessages(self, xml):
         """
