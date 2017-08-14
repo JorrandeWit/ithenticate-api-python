@@ -63,6 +63,14 @@ class Client(object):
         """
         return int(xml.find(".//member[name='api_status']/value/int").text)
 
+    @property
+    def status(self):
+        return self._status if hasattr(self, '_status') else 200
+
+    @property
+    def messages(self):
+        return self._latest_messages if hasattr(self, '_latest_messages') else []
+
     def doHttpCall(self, http_method='POST', data=None):
         """
         Make a general call to the iThenticate API.
@@ -83,4 +91,6 @@ class Client(object):
             raise Exception(e)
 
         xml = ET.fromstring(response.text)
+        self._latest_messages = self.getAPIMessages(xml)
+        self._status = self.getAPIStatus(xml)
         return xml
