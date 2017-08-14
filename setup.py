@@ -2,12 +2,12 @@
 from setuptools import setup, find_packages
 
 setup(name='ithenticate-api-python',
-      version='0.3.1',
+      version='0.4',
       url='https://github.com/JorrandeWit/ithenticate-api-python',
       author="Jorran de Wit",
       author_email="jorrandewit@outlook.com",
       description="iThenticate API Client",
-      classifiers=['Development Status :: 3 - Alpha',
+      classifiers=['Development Status :: 4 - Beta',
                    'Environment :: Web Environment',
                    'Intended Audience :: Developers',
                    'License :: OSI Approved :: BSD License',
