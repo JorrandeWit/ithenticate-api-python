@@ -34,7 +34,7 @@ True
 
 ### Folders ###
 
-Use the `folders` property is to list and get folders related to your account.
+Use the `folders` property to list all folders related to your account.
 
 #### List all folders ####
 ##### `folders.all()` #####
@@ -46,7 +46,7 @@ Use the `folders` property is to list and get folders related to your account.
     {
       'name': 'My Folder',
       'group': None,
-      'id': 123456'
+      'id': 123456,
     }
   ],
   "messages": [],
@@ -56,7 +56,7 @@ Use the `folders` property is to list and get folders related to your account.
 
 ### Documents ###
 
-Use the `documents` property is to all document related methods.
+Use the `documents` property forall document related methods.
 
 #### Get all documents ####
 ##### `documents.all(folder_id)` #####
@@ -86,7 +86,7 @@ Use the `documents` property is to all document related methods.
   "data": [
     {
       'filename': 'document.pdf',
-      'id': 123456
+      'id': 123456,
     }
   ],
   "messages": [
@@ -110,7 +110,7 @@ Use the `documents` property is to all document related methods.
         'author_first': 'John',
         'percent_match': 73,
         'is_pending': 1,
-        'processed_time': '2008-06-05T15:30:02'
+        'processed_time': '2008-06-05T15:30:02',
     }
   ],
   "messages": [],
