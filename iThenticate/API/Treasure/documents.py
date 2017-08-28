@@ -8,19 +8,23 @@ class Document(object):
     def __init__(self, client):
         self.client = client
 
-    def add(self, file_path, folder_id, author_first_name, author_last_name, title=None):
+    def add(self, file_path, folder_id, author_first_name, author_last_name, title):
         """
         Submit a new document to your iThenticate account.
 
-        :file_path: The path to the document on your machine
+        :file_path: The path to the document on your machine or bytes version of file
         :folder_id: The folder where the document should be uploaded to
         :author_first_name: First name of first author
         :author_last_name: Last name of first author
         :title: The title of the document to use in iThenticate
         """
-        encoded = base64.b64encode(open(file_path, 'rb').read())
-        filename = file_path.split('/')[-1]
-        title = title or filename
+        try:
+            encoded = base64.b64encode(open(file_path, 'rb').read())
+            filename = file_path.split('/')[-1]
+        except (AttributeError, ValueError):
+            # File_path is 'bytes' already
+            encoded = base64.b64encode(file_path)
+            filename = '{name}.pdf'.format(name=title.replace(' ', '_'))
 
         xml_string = get_xml_as_string('add_document.xml')
         xml_string = xml_string.format(
