@@ -19,11 +19,11 @@ class Document(object):
         :title: The title of the document to use in iThenticate
         """
         try:
-            encoded = base64.b64encode(open(file_path, 'rb').read())
+            encoded = base64.b64encode(open(file_path, 'rb').read()).decode('utf-8')
             filename = file_path.split('/')[-1]
         except (AttributeError, ValueError):
             # File_path is 'bytes' already
-            encoded = base64.b64encode(file_path)
+            encoded = base64.b64encode(file_path).decode('utf-8')
             filename = '{name}.pdf'.format(name=title.replace(' ', '_'))
 
         xml_string = get_xml_as_string('add_document.xml')
