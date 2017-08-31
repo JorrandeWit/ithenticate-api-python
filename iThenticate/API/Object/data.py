@@ -37,13 +37,13 @@ class Data(dict):
         value_node = node.find('.//value')[0]
 
         # Value of node
-        if value_node == 'int':
+        if value_node.tag == 'int':
             value = int(value_node.text.strip())
-        elif value_node == 'array':
+        elif value_node.tag == 'array':
             value = self.break_down_array_node(value_node)
-        elif value_node == 'struct':
+        elif value_node.tag == 'struct':
             value = self.break_down_struct_node(value_node)
-        elif value_node == 'string':
+        elif value_node.tag == 'string':
             value = value_node.text.strip()
         else:
             # dateTime.iso8601 or something exotic
