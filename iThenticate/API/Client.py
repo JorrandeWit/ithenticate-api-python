@@ -20,6 +20,7 @@ class Client(object):
         self.folders = Treasure.Folder(self)
         self.documents = Treasure.Document(self)
         self.groups = Treasure.Group(self)
+        self.reports = Treasure.Report(self)
 
     def setCredentials(self, username, password):
         self._username = username
