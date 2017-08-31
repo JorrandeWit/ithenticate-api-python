@@ -11,11 +11,44 @@ class Data(dict):
             'status': status or 200,
             'messages': messages or []
         }
-        for struct_node in struct_nodes:
-            _dict = self.break_down_struct_node(struct_node)
+
+        if not struct_nodes:
+            # Some responses are 'simple'
+            xml_regex = ".//member[name='{object_name}']"
+            struct_nodes = xml.findall(xml_regex.format(object_name=object_name))
+            _dict = {}
+
+            for item in struct_nodes:
+                value, key = self._value_decision_tree(item)
+                _dict[key] = value
+
             content['data'].append(_dict)
+        else:
+            # Complex structures
+            for struct_node in struct_nodes:
+                _dict = self.break_down_struct_node(struct_node)
+                content['data'].append(_dict)
 
         dict.__init__(self, content)
+
+    def _value_decision_tree(self, node):
+        # All properties in a single item
+        key = node.find('name').text
+        value_node = node.find('.//value')[0]
+
+        # Value of node
+        if value_node == 'int':
+            value = int(value_node.text.strip())
+        elif value_node == 'array':
+            value = self.break_down_array_node(value_node)
+        elif value_node == 'struct':
+            value = self.break_down_struct_node(value_node)
+        elif value_node == 'string':
+            value = value_node.text.strip()
+        else:
+            # dateTime.iso8601 or something exotic
+            value = value_node.text
+        return value, key
 
     def break_down_array_node(self, node):
         """
@@ -30,21 +63,6 @@ class Data(dict):
         _dict = {}
 
         for item in node_items:
-            # All properties in a single item
-            key = item.find('name').text
-            value_node = item.find('.//value')[0]
-
-            # Value of node
-            if value_node == 'int':
-                value = int(value_node.text.strip())
-            elif value_node == 'array':
-                value = self.break_down_array_node(value_node)
-            elif value_node == 'struct':
-                value = self.break_down_struct_node(value_node)
-            elif value_node == 'string':
-                value = value_node.text.strip()
-            else:
-                # dateTime.iso8601 or something exotic
-                value = value_node.text
+            value, key = self._value_decision_tree(item)
             _dict[key] = value
         return _dict
