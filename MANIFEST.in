@@ -1,2 +1,3 @@
-include *.xml
-recursive-include **/templates *.xml
+include *.md
+include LICENSE
+recursive-include iThenticate *.xml
