@@ -55,7 +55,13 @@ class Data(dict):
         Dummy: To be implemented to be able to return nested array structs.
                Now, the node will return an empty string.
         """
-        return node
+        node_items = node[0].findall('value')
+        _dict = {}
+
+        for item in node_items:
+            value, key = self._value_decision_tree(item)
+            _dict[key] = value
+        return _dict
 
     def break_down_struct_node(self, struct):
         # All items returned

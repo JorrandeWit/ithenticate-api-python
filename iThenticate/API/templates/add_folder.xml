@@ -1,5 +1,5 @@
 <methodCall>
-    <methodName>group.add</methodName>
+    <methodName>folder.add</methodName>
     <params>
         <param>
             <value>
