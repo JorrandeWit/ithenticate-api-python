@@ -14,6 +14,7 @@ class Report(object):
         """
         xml_string = get_xml_as_string('get.xml')
         xml_string = xml_string.format(
+            method_name='report.get',
             sid=self.client._session_id,
             id=int(document_id))
 

@@ -55,7 +55,7 @@ class Data(dict):
         Dummy: To be implemented to be able to return nested array structs.
                Now, the node will return an empty string.
         """
-        node_items = node[0].findall('value')
+        node_items = node.findall('value')
         _dict = {}
 
         for item in node_items:
