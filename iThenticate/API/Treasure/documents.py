@@ -38,7 +38,7 @@ class Document(object):
 
         xml_response = self.client.doHttpCall(data=xml_string)
 
-        return Data(xml_response, 'uploaded',
+        return Data(xml_response,
                     self.client.getAPIStatus(xml_response),
                     self.client.getAPIMessages(xml_response))
 
@@ -55,7 +55,7 @@ class Document(object):
 
         xml_response = self.client.doHttpCall(data=xml_string)
 
-        return Data(xml_response, 'documents',
+        return Data(xml_response,
                     self.client.getAPIStatus(xml_response),
                     self.client.getAPIMessages(xml_response))
 
@@ -72,6 +72,6 @@ class Document(object):
 
         xml_response = self.client.doHttpCall(data=xml_string)
 
-        return Data(xml_response, 'documents',
+        return Data(xml_response,
                     self.client.getAPIStatus(xml_response),
                     self.client.getAPIMessages(xml_response))

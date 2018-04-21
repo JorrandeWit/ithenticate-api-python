@@ -20,6 +20,6 @@ class Report(object):
 
         xml_response = self.client.doHttpCall(data=xml_string)
 
-        return Data(xml_response, 'report_url',
+        return Data(xml_response,
                     self.client.getAPIStatus(xml_response),
                     self.client.getAPIMessages(xml_response))

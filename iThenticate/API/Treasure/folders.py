@@ -22,7 +22,7 @@ class Folder(object):
 
         xml_response = self.client.doHttpCall(data=xml_string)
 
-        return Data(xml_response, 'id',
+        return Data(xml_response,
                     self.client.getAPIStatus(xml_response),
                     self.client.getAPIMessages(xml_response))
 
@@ -33,6 +33,6 @@ class Folder(object):
 
         xml_response = self.client.doHttpCall(data=xml_string)
 
-        return Data(xml_response, 'folders',
+        return Data(xml_response,
                     self.client.getAPIStatus(xml_response),
                     self.client.getAPIMessages(xml_response))

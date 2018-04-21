@@ -21,7 +21,7 @@ class Group(object):
 
         xml_response = self.client.doHttpCall(data=xml_string)
 
-        return Data(xml_response, 'id',
+        return Data(xml_response,
                     self.client.getAPIStatus(xml_response),
                     self.client.getAPIMessages(xml_response))
 
@@ -32,6 +32,6 @@ class Group(object):
 
         xml_response = self.client.doHttpCall(data=xml_string)
 
-        return Data(xml_response, 'groups',
+        return Data(xml_response,
                     self.client.getAPIStatus(xml_response),
                     self.client.getAPIMessages(xml_response))
