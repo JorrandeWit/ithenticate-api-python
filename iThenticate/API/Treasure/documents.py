@@ -18,11 +18,10 @@ class Document(object):
         :author_last_name: Last name of first author
         :title: The title of the document to use in iThenticate
         """
-        try:
+	if not isinstance(file_path, bytes):
             encoded = base64.b64encode(open(file_path, 'rb').read()).decode('utf-8')
             filename = file_path.split('/')[-1]
-        except (AttributeError, ValueError):
-            # File_path is 'bytes' already
+        else:
             encoded = base64.b64encode(file_path).decode('utf-8')
             filename = '{name}.pdf'.format(name=title.replace(' ', '_'))
 
