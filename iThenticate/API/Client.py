@@ -90,7 +90,7 @@ class Client(object):
                 data=data
             )
         except Exception as e:
-            raise Exception(e)
+            raise e
 
         xml = ET.fromstring(response.text)
         self._latest_messages = self.getAPIMessages(xml)
